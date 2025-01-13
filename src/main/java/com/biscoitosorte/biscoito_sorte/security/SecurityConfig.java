@@ -38,13 +38,13 @@ public class SecurityConfig {
     @Value("${jwt.private.key}")
     private String privateKeyPath;
 
-    // @Bean
-    // public RSAPublicKey publicKey() throws Exception {
-    //     // Ler o conteúdo da chave pública do arquivo
-    //     var keyBytes = Files.readAllBytes(new File(publicKeyPath).toPath());
-    //     var spec = new X509EncodedKeySpec(keyBytes);
-    //     return (RSAPublicKey) KeyFactory.getInstance("RSA").generatePublic(spec);
-    // }
+    @Bean
+    public RSAPublicKey publicKey() throws Exception {
+        // Ler o conteúdo da chave pública do arquivo
+        var keyBytes = Files.readAllBytes(new File(publicKeyPath).toPath());
+        var spec = new X509EncodedKeySpec(keyBytes);
+        return (RSAPublicKey) KeyFactory.getInstance("RSA").generatePublic(spec);
+    }
 
     @Bean
     public RSAPrivateKey privateKey() throws Exception {
