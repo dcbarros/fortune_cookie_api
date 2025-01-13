@@ -1,9 +1,0 @@
-spring.application.name=biscoito_sorte
-
-#Não é compartilhada, estou compartilhando por questões de estudo
-jwt.private.key=classpath:app.key
-#É compartilhavel
-jwt.public.key=classpath:app.pub
-
-logging.level.org.springframework.web=DEBUG
-logging.level.com.biscoitosorte.biscoito_sorte.controller=DEBUG
